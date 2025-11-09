@@ -344,14 +344,14 @@ export const hassUpdateAttributeConverter: { domain: string; with: string; clust
  * If the device type is null, no device type will be added. It will use hassDomainSensorsConverter and hassDomainBinarySensorsConverter to determine the device type and clusterId.
  */
 // prettier-ignore
-export const hassDomainConverter: { domain: string; withAttribute?: string; deviceType: DeviceTypeDefinition | null; clusterId: ClusterId | null }[] = [
+export const hassDomainConverter: { domain: string; withSupportedFeature?: string; deviceType: DeviceTypeDefinition | null; clusterId: ClusterId | null }[] = [
     { domain: 'switch',                                 deviceType: onOffOutlet,            clusterId: OnOff.Cluster.id },
     { domain: 'light',                                  deviceType: onOffLight,             clusterId: OnOff.Cluster.id },
-    { domain: 'light',    withAttribute: 'brightness',  deviceType: dimmableLight,          clusterId: LevelControl.Cluster.id },
-    { domain: 'light',    withAttribute: 'color_temp_kelvin',  deviceType: colorTemperatureLight,  clusterId: ColorControl.Cluster.id },
-    { domain: 'light',    withAttribute: 'hs_color',    deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
-    { domain: 'light',    withAttribute: 'rgb_color',   deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
-    { domain: 'light',    withAttribute: 'xy_color',    deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
+    { domain: 'light',    withSupportedFeature: 'brightness',    deviceType: dimmableLight,          clusterId: LevelControl.Cluster.id },
+    { domain: 'light',    withSupportedFeature: 'color_temp',    deviceType: colorTemperatureLight,  clusterId: ColorControl.Cluster.id },
+    { domain: 'light',    withSupportedFeature: 'hs',            deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
+    { domain: 'light',    withSupportedFeature: 'rgb',           deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
+    { domain: 'light',    withSupportedFeature: 'xy',            deviceType: extendedColorLight,     clusterId: ColorControl.Cluster.id },
     { domain: 'lock',                                   deviceType: doorLockDevice,         clusterId: DoorLock.Cluster.id },
     { domain: 'fan',                                    deviceType: fanDevice,              clusterId: FanControl.Cluster.id },
     { domain: 'cover',                                  deviceType: coverDevice,            clusterId: WindowCovering.Cluster.id },
